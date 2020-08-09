@@ -1,0 +1,45 @@
+{
+  "name": "truffle_blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ganache-cli": "^6.9.1",
+    "ipfs-api": "^26.1.2",
+    "truffle": "^5.1.30",
+    "web3": "^1.2.9"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "eth-gas-reporter": "^0.2.17",
+    "ethlint": "^1.2.5",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-test-utils": "^0.1.0"
+  },
+  "scripts": {
+    "test": "concurrently \"npm run ganache\" \"npm run migrate && truffle test\" --kill-others --success first",
+    "ganache": "ganache-cli --networkId $npm_package_config_ganache_networkId --allowUnlimitedContractSize --gasLimit $npm_package_config_ganache_gasLimit --gasPrice $npm_package_config_ganache_gasPrice --mnemonic \"$MNEMONIC\"",
+    "start": "concurrently \"npm run ganache\" \"npm run migrate\"",
+    "migrate": "rm -rf build && truffle migrate --reset --compile-all --network development",
+    "start:kovan": "concurrently \"npm run ganache:kovan\" \"npm run migrate\"",
+    "start:rinkeby": "concurrently \"npm run ganache:rinkeby\" \"npm run migrate\"",
+    "start:ropsten": "concurrently \"npm run ganache:ropsten\" \"npm run migrate\"",
+    "ganache:kovan": "npm run ganache -- --fork \"https://kovan.infura.io/v3/6ef19a5fe24a416990423d212605cfe8\"",
+    "ganache:rinkeby": "npm run ganache -- --fork \"https://rinkeby.infura.io/v3/6ef19a5fe24a416990423d212605cfe8\"",
+    "ganache:ropsten": "npm run ganache -- --fork \"https://ropsten.infura.io/v3/6ef19a5fe24a416990423d212605cfe8\"",
+    "lint:sol": "solium -d ."
+  },
+  "config": {
+    "ganache": {
+      "networkId": 5777,
+      "gasPrice": 25000000000,
+      "gasLimit": 6500000
+    }
+  },
+  "author": "",
+  "license": "ISC"
+}

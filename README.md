@@ -1,10 +1,3 @@
-## To check all network
-`node_modules/.bin/truffle networks`
-## Tutorial
-https://blog.ippon.tech/creating-your-first-truffle-project-part-2-of-2/
-https://medium.com/coinmonks/step-by-step-approach-to-create-dapp-using-ethereum-reactjs-ipfs-part-3-final-851187ca9c24
-https://www.freecodecamp.org/news/hands-on-get-started-with-infura-and-ipfs-on-ethereum-b63635142af0/
-
 ## Compiling blockchain code
 Compiling the contract run `truffle-compile`
 ` cd build/contract` and extract the abi and contract address from Energy.json
@@ -20,4 +13,10 @@ Login to either Ganache or a current crypto wallet and input the ’WALLETADDRES
 
 ## After deployment
 After a successful buy/sell is triggered, go to `https://kovan.etherscan.io/` and enter the contract address in the search. A transaction will be updated to the contract address within 15 seconds of triggering from the application
+
+
+## Credits
+https://blog.ippon.tech/creating-your-first-truffle-project-part-2-of-2/
+https://medium.com/coinmonks/step-by-step-approach-to-create-dapp-using-ethereum-reactjs-ipfs-part-3-final-851187ca9c24
+https://www.freecodecamp.org/news/hands-on-get-started-with-infura-and-ipfs-on-ethereum-b63635142af0/
 

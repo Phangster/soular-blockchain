@@ -21,6 +21,3 @@ Login to either Ganache or a current crypto wallet and input the ’WALLETADDRES
 ## After deployment
 After a successful buy/sell is triggered, go to `https://kovan.etherscan.io/` and enter the contract address in the search. A transaction will be updated to the contract address within 15 seconds of triggering from the application
 
-## Runing front end
-npm start in client will connect the front end to infura and metamask
-

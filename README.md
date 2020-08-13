@@ -1,4 +1,4 @@
-## Compiling blockchain code
+## Compile blockchain code
 Compiling the contract run `truffle-compile`
 ` cd build/contract` and extract the abi and contract address from Energy.json
 
